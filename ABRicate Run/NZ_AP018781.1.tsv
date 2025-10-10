@@ -1,2 +1,0 @@
-#FILE	SEQUENCE	START	END	STRAND	GENE	COVERAGE	COVERAGE_MAP	GAPS	%COVERAGE	%IDENTITY	DATABASE	ACCESSION	PRODUCT	RESISTANCE
-input/NZ_AP018781.fasta	NZ_AP018781.1	1690837	1692231	-	hmrM	1-1395/1395	===============	0/0	100.00	98.06	card	CP002276.1:1146068-1144673	hmrM is a multidrug efflux pump belonging to the MATE family and functions as a  Na+/drug antiporter.	acridine_dye;fluoroquinolone

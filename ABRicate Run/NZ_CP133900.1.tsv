@@ -1,3 +1,0 @@
-#FILE	SEQUENCE	START	END	STRAND	GENE	COVERAGE	COVERAGE_MAP	GAPS	%COVERAGE	%IDENTITY	DATABASE	ACCESSION	PRODUCT	RESISTANCE
-input/NZ_CP133900.fasta	NZ_CP133900.1	1223727	1224835	+	tet(35)	1-1109/1110	===============	0/0	99.91	82.78	card	AF353562.1:3322-2212	Tet35 is a tetracycline efflux pump found in the Gram-negative Vibrio and Stenotrophomonas. It is unrelated to other tet resistance genes.	tetracycline
-input/NZ_CP133900.fasta	NZ_CP133900.1	3173402	3174034	+	CRP	1-633/633	===============	0/0	100.00	80.09	card	AP009048.1:4154296-4153663	CRP is a global regulator that represses MdtEF multidrug efflux pump expression.	fluoroquinolone;macrolide;penam

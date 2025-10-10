@@ -123,6 +123,6 @@ Thumbs.db
 # Logs
 *.log
 
-# Data files (if large, but for now keep)
-# ABRicate Run/
-# Genome Extractor Run/
+# Data files (large genome data)
+ABRicate Run/
+Genome Extractor Run/
