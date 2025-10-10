@@ -1,0 +1,2 @@
+#FILE	SEQUENCE	START	END	STRAND	GENE	COVERAGE	COVERAGE_MAP	GAPS	%COVERAGE	%IDENTITY	DATABASE	ACCESSION	PRODUCT	RESISTANCE
+input/NZ_AP024165.fasta	NZ_AP024165.1	1898416	1899524	-	tet(35)	1-1109/1110	===============	0/0	99.91	83.95	card	AF353562.1:3322-2212	Tet35 is a tetracycline efflux pump found in the Gram-negative Vibrio and Stenotrophomonas. It is unrelated to other tet resistance genes.	tetracycline
