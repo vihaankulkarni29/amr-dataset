@@ -20,11 +20,13 @@ The project processes:
 
 - `process_amr_data.py`: Main script to process raw data into initial CSV
 - `clean_amr_data.py`: Script to one-hot encode AMR features
+- `merge_datasets.py`: Script to merge AMR data with metadata
 - `amr_summary_dataset.csv`: Intermediate dataset with semicolon-separated AMR data
-- `amr_summary_cleaned.csv`: Final cleaned dataset with binary features
+- `amr_summary_cleaned.csv`: Cleaned dataset with binary AMR features
+- `amr_dataset_final_enriched.csv`: Final enriched dataset with metadata (44 rows, 133 columns)
 - `requirements.txt`: Python dependencies
-- `ABRicate Run/`: Directory containing AMR annotation TSV files
-- `Genome Extractor Run/`: Directory containing genome FASTA files
+- `ABRicate Run/`: Directory containing AMR annotation TSV files (ignored by git)
+- `Genome Extractor Run/`: Directory containing genome FASTA files (ignored by git)
 
 ## Installation
 
@@ -53,6 +55,12 @@ The project processes:
    ```
    This generates `amr_summary_cleaned.csv` with one-hot encoded features.
 
+3. **Merge with Metadata** (Optional):
+   ```bash
+   python merge_datasets.py
+   ```
+   This generates `amr_dataset_final_enriched.csv` with additional metadata columns.
+
 ## Data Description
 
 ### Input Data
@@ -65,6 +73,17 @@ The project processes:
 - **GC_Content_Percent**: GC content percentage (rounded to 2 decimals)
 - **Gene Columns**: Binary columns for each unique AMR gene (1=present, 0=absent)
 - **Phenotype Columns**: Binary columns for each unique resistance phenotype
+
+### Final Enriched Dataset
+The `amr_dataset_final_enriched.csv` includes additional metadata columns:
+- **organism**: Bacterial species
+- **strain**: Specific strain information
+- **collection_date**: Date sample was collected
+- **country**: Country of origin
+- **host**: Host organism (if applicable)
+- **isolation_source**: Source of isolation
+- **bioproject**: NCBI BioProject ID
+- **biosample**: NCBI BioSample ID
 
 ## Dependencies
 
