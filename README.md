@@ -1,6 +1,6 @@
 # AMR Genome Dataset Processor
 
-This repository contains Python scripts to process bacterial genome files and their corresponding antimicrobial resistance (AMR) annotation files to generate a consolidated dataset suitable for machine learning and data analysis on Kaggle.
+This repository contains Python scripts to process bacterial genome files and their corresponding antimicrobial resistance (AMR) annotation files to generate a consolidated Kaggle dataset suitable for machine learning and data analysis.
 
 ## Overview
 
@@ -83,5 +83,6 @@ The project processes:
 This project is open source. Please check the license file for details.
 
 ## Contact
+
 
 For questions or issues, please open a GitHub issue.
