@@ -21,7 +21,7 @@ The project processes:
 - `process_amr_data.py`: Main script to process raw data into initial CSV
 - `clean_amr_data.py`: Script to one-hot encode AMR features
 - `amr_summary_dataset.csv`: Intermediate dataset with semicolon-separated AMR data
-- `amr_summary_cleaned.csv`: Final cleaned dataset with binary features
+- `amr_summary_cleaned.csv`: Final cleaned dataset with binary features (50 rows, 92 columns)
 - `requirements.txt`: Python dependencies
 - `ABRicate Run/`: Directory containing AMR annotation TSV files
 - `Genome Extractor Run/`: Directory containing genome FASTA files
