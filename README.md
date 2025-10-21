@@ -21,7 +21,9 @@ The project processes:
 - `process_amr_data.py`: Main script to process raw data into initial CSV
 - `clean_amr_data.py`: Script to one-hot encode AMR features
 - `amr_summary_dataset.csv`: Intermediate dataset with semicolon-separated AMR data
-- `amr_summary_cleaned.csv`: Final cleaned dataset with binary features
+- `amr_summary_cleaned.csv`: Final cleaned dataset with binary features (50 rows, 92 columns)
+- `amr_dataset_variable_features.csv`: Curated dataset with variable AMR features only (50 rows, 27 columns)
+- `feature_selection.py`: Script for intelligent feature selection based on gene frequency
 - `requirements.txt`: Python dependencies
 - `ABRicate Run/`: Directory containing AMR annotation TSV files
 - `Genome Extractor Run/`: Directory containing genome FASTA files
@@ -53,6 +55,12 @@ The project processes:
    ```
    This generates `amr_summary_cleaned.csv` with one-hot encoded features.
 
+3. **Feature Selection (Optional)**:
+   ```bash
+   python feature_selection.py
+   ```
+   This generates `amr_dataset_variable_features.csv` with only variable AMR features (1-95% frequency).
+
 ## Data Description
 
 ### Input Data
@@ -65,6 +73,12 @@ The project processes:
 - **GC_Content_Percent**: GC content percentage (rounded to 2 decimals)
 - **Gene Columns**: Binary columns for each unique AMR gene (1=present, 0=absent)
 - **Phenotype Columns**: Binary columns for each unique resistance phenotype
+
+### Variable Features Dataset
+The `amr_dataset_variable_features.csv` contains only AMR features with variable frequency (1-95%):
+- **Removed housekeeping genes**: Features present in >95% of isolates (e.g., CRP, acrB, intrinsic efflux pumps)
+- **Removed rare genes**: Features present in <1% of isolates
+- **Result**: 24 carefully selected AMR features that provide meaningful variation for analysis
 
 ## Dependencies
 
