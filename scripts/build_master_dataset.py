@@ -7,7 +7,7 @@ try:
     print("Loading data sources...")
 
     # Source 1: The intermediate file with gene lists
-    amr_lists_df = pd.read_csv('amr_summary_dataset.csv')
+    amr_lists_df = pd.read_csv('../data/processed/amr_summary_dataset.csv')
 
     # Source 2: The epidemiological metadata (old file) - create dummy since file doesn't exist
     epi_meta_df = pd.DataFrame({
@@ -19,7 +19,7 @@ try:
     })
 
     # Source 3: The new publication metadata
-    pub_meta_df = pd.read_csv('NCBI Metadata Run/metadata_3ebce10c-02d3-448b-a224-4290ec9583cd.csv')
+    pub_meta_df = pd.read_csv('../data/raw/NCBI Metadata Run/metadata_3ebce10c-02d3-448b-a224-4290ec9583cd.csv')
 
 except FileNotFoundError as e:
     print(f"Error: Make sure '{e.filename}' is in the same directory as the script.")
@@ -170,7 +170,7 @@ final_dataset.drop('accession_base', axis=1, inplace=True)
 isolate_col = final_dataset.pop('Isolate_ID')
 final_dataset.insert(0, 'Isolate_ID', isolate_col)
 
-output_filename = 'Kaggle_AMR_Dataset_v1.0_final.csv'
+output_filename = '../data/processed/Kaggle_AMR_Dataset_v1.0_final.csv'
 print(f"Saving final master dataset to '{output_filename}'...")
 final_dataset.to_csv(output_filename, index=False)
 
