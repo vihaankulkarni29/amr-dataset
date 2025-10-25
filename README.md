@@ -203,23 +203,43 @@ If you use this dataset in your research, please cite:
 amr-dataset/
 ├── data/
 │   ├── raw/                    # Raw genomic and metadata files
-│   │   ├── ABRicate Run/      # AMR gene annotations
-│   │   ├── Genome Extractor Run/  # Genome FASTA files
+│   │   ├── ABRicate Run/      # AMR gene annotations (gitignored)
+│   │   ├── Genome Extractor Run/  # Genome FASTA files (gitignored)
 │   │   └── NCBI Metadata Run/  # Publication metadata
-│   └── processed/             # Processed datasets
-│       ├── amr_summary_dataset.csv
-│       ├── amr_summary_cleaned.csv
-│       └── Kaggle_AMR_Dataset_v1.0_final.csv
-├── scripts/                   # Data processing scripts
-│   ├── process_amr_data.py
-│   ├── build_master_dataset.py
-│   └── dataset_check.py
+│   └── processed/             # Processed datasets at different stages
+│       ├── amr_summary_dataset.csv          # Raw processed (semicolon lists)
+│       ├── amr_summary_cleaned.csv          # One-hot encoded (93 cols)
+│       ├── amr_dataset_variable_features.csv # Curated subset (29 cols)
+│       └── Kaggle_AMR_Dataset_v1.0_final.csv # Complete dataset (112 cols)
+├── scripts/                   # Data processing pipeline
+│   ├── process_amr_data.py    # Initial data extraction
+│   ├── clean_amr_data.py      # One-hot encoding
+│   ├── merge_datasets.py      # Metadata integration
+│   ├── build_master_dataset.py # Complete pipeline
+│   └── dataset_check.py       # Validation scripts
+├── AMR_Dataset_Exploration.ipynb  # Comprehensive analysis notebook
 ├── .gitignore
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
 └── requirements.txt
 ```
+
+### Data Processing Pipeline
+
+The multiple files in `data/processed/` represent **different stages of data processing**:
+
+| File | Stage | Purpose | Features | Use Case |
+|------|-------|---------|----------|----------|
+| `amr_summary_dataset.csv` | Raw Processing | Initial extraction with semicolon-separated lists | 5 cols | Intermediate processing |
+| `amr_summary_cleaned.csv` | Feature Encoding | One-hot encoded AMR genes and classes | 93 cols | Full AMR analysis |
+| `amr_dataset_variable_features.csv` | Feature Selection | Curated subset removing housekeeping genes | 29 cols | Focused ML models |
+| `Kaggle_AMR_Dataset_v1.0_final.csv` | **Final Dataset** | Complete with rich metadata and engineered features | **112 cols** | **Publication & research** |
+
+**Which file should you use?**
+- **For Kaggle/publication**: `Kaggle_AMR_Dataset_v1.0_final.csv` (complete dataset)
+- **For ML modeling**: `amr_dataset_variable_features.csv` (focused features)
+- **For full AMR analysis**: `amr_summary_cleaned.csv` (all AMR features)
 
 ## 🤝 Contributing
 
